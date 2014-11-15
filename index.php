@@ -1,12 +1,9 @@
 <?php 
 
 require 'referrallink.php'; 
+require 'config.php'; 
 
-$referral = new ReferralLink(array(
-  'url' => 'yoursite.ru',
-  'length' => 5, 
-  'keyName' => 'ref'
-));
+$referral = new ReferralLink($config);
 
 ?>
 <!DOCTYPE html>
@@ -21,8 +18,10 @@ $referral = new ReferralLink(array(
     <title>Referral-PHP </title>
   </head>
   <body>
-    <h1>Hello</h1>
-    <div>Referal link: <? echo $referral->createLink(); ?>
+    <h1>Реферальные ссылки</h1>
+    <div><a href="test.php">Проверить</a></div>
+    <div><a href="create.php">Создать</a></div>
+    <div><a href="statistics.php">Статистика посещений</a></div>
     </div>
   </body>
 </html>
